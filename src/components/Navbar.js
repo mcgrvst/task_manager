@@ -1,15 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {NavLink} from 'react-router-dom'
 import { useContext } from 'react/cjs/react.development'
-import { Alert } from './Alert'
 import { AlertContext } from "../context/alert/alertContext";
 
 
-export const Navbar = ({updateNotes}) => {
+export const Navbar = () => {
     
-    const {alert, hide} = useContext(AlertContext)
+    const {hide} = useContext(AlertContext)
 
-    const [value, setValue]= useState('')
     return (
         <nav className = "navbar navbar-light navbar-expand-lg bg-light">
             <div className="navbar-brand" style={{marginLeft: 16}}>

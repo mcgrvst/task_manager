@@ -1,14 +1,10 @@
-import React, {useState, useContext} from 'react'
-import { AlertContext } from '../context/alert/alertContext'
+import React, {useState} from 'react'
 
 export const Form = ({updateNotes}) => {
     const [value, setValue]= useState('')
 
-    const alert = useContext(AlertContext)
-
     const submitHandler = event => {
         event.preventDefault()
-        let currentArray = []
 
         if (value) {
             updateNotes(value.trim())

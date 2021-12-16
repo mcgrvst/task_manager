@@ -3,12 +3,10 @@ import React from "react";
 export const SortButtons = ({notes, updateNotes, applySort}) => {
 
     const alphabetSort = () => {
-        console.log('Зашли')
         const list = [...notes]
 
         if (list){
             try{
-                console.log(list)
                 applySort(
                     list.sort(function(a, b){
                         if(a.taskName < b.taskName) { return -1; }
@@ -17,17 +15,14 @@ export const SortButtons = ({notes, updateNotes, applySort}) => {
                     })
                 )
             }catch(e){}
-            console.log(list)
         }
     }
 
     const dateDownSort = () => {
-        console.log('Зашли')
         const list = [...notes]
 
         if (list){
             try{
-                console.log(list)
                 applySort(
                     list.sort(function(a, b){
                         if(a.taskDate < b.taskDate) { return -1; }
@@ -36,17 +31,14 @@ export const SortButtons = ({notes, updateNotes, applySort}) => {
                     })
                 )
             }catch(e){}
-            console.log(list)
         }
     }
 
     const dateUpSort = () => {
-        console.log('Зашли')
         const list = [...notes]
 
         if (list){
             try{
-                console.log(list)
                 applySort(
                     list.sort(function(a, b){
                         if(a.taskDate > b.taskDate) { return -1; }
@@ -55,7 +47,6 @@ export const SortButtons = ({notes, updateNotes, applySort}) => {
                     })
                 )
             }catch(e){}
-            console.log(list)
         }
     }
 

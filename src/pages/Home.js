@@ -7,7 +7,6 @@ export const Home = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(()=> {
-        console.log('test')
         updateNotes()
     },[])
 
@@ -16,19 +15,16 @@ export const Home = () => {
 
         if (keyWord){
             try{
-                console.log(list)
-                setNotes((JSON.parse(list)).filter((note, phrase) => (note.taskName.toLowerCase()).includes(keyWord.toLowerCase()) || (note.taskText.toLowerCase()).includes(keyWord.toLowerCase())))
+                setNotes((JSON.parse(list)).filter((note) => (note.taskName.toLowerCase()).includes(keyWord.toLowerCase()) || (note.taskText.toLowerCase()).includes(keyWord.toLowerCase())))
             }catch(e){}
         } else if (list) {
             try{
-                console.log('update')
                 setNotes(JSON.parse(list))
             }catch(e){}
         }
     }
 
     const applySort = (list) => {
-        console.log('applySort')
         setNotes(list)
     }
 
